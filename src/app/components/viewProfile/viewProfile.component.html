@@ -1,0 +1,59 @@
+<body>
+  <header>
+    <a href="/home"><img src="assets/logo.png"></a>
+  </header>
+  <div *ngIf="ready" class="doctor">
+    <img class="docImg" [src]="doctor.image">
+    <h1>Dr {{doctor.name}}</h1>
+    <p>Dr {{doctor.name}} is a specialist in the field of {{doctor.medical_field}}.</p>
+    <p>Practices since {{doctor.practicing_since}}</p>
+    <p>Education:  {{doctor.education}}</p>
+    <p>Practice: {{doctor.practice}}</p>
+    <p>Dr {{doctor.name}} provides services as {{doctor.services}}</p>
+    <p>Dr {{doctor.name}} works at:</p>
+      <ul>
+        <li>{{availability[0].workplace.name}}, {{availability[0].workplace.address}}, {{availability[0].workplace.city}}</li>
+      </ul>
+    <p>Work timetable:</p>
+    <table>
+      <tr>
+        <th>Workplace</th>
+        <th>Day</th>
+        <th>From</th>
+        <th>To</th>
+      </tr>
+      <tr *ngFor="let a of availability">
+        <td>{{a.workplace.name}}</td>
+        <td>{{a.day}}</td>
+        <td>{{a.from_h}}</td>
+        <td>{{a.to_h}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="book" *ngIf="ready">
+    <h1>Book appointment</h1>
+    <form>
+      <label for="hospital">Hospital</label>
+      <select id="hospital" name="workplace">
+        <option value={{availability[0].workplace.id}}>{{availability[0].workplace.name}}</option>
+      </select><br>
+      <label for="date">Date:</label>
+      <input id="date" name="date" type="date" [(ngModel)] = chosenDate>
+      <button type="submit" (click)="GetFreeHours()">Confirm</button>
+    </form>
+    <br>
+    <div *ngIf="datechosen" class="appointment">
+      <p>Available hours for appointment</p>
+      <div class="appointment">
+        <p *ngIf="availableHours.length===0" else elseblock>No available hours for this day</p>
+        <div #elseblock  *ngFor="let time of availableHours" class="appointment">
+          <p> 
+            <a (click)="BookAppointment(time, chosenDate)"> {{time}} </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<router-outlet></router-outlet>

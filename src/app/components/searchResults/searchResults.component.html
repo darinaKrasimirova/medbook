@@ -1,0 +1,18 @@
+<body>
+  <header>
+    <a href="/home"><img src="assets/logo.png"></a>
+  </header>
+  <h1 *ngIf="searchParams.name !== ''">Search results for '{{searchParams.name}}'</h1>
+  <h1 *ngIf="searchParams.name === ''">Search results for '{{fields[searchParams.field]}}   {{cities[searchParams.city]}}'</h1>
+  <div *ngFor="let doctor of docs">
+    <img class="img" [src]="doctor.image">
+    <h2><a (click)="GoToProfile(doctor)">Dr {{doctor.name}}</a></h2>
+    <p>Medical field: {{doctor.medical_field}}</p>
+    <p>Practices since: {{doctor.practicing_since}}</p>
+    <p>City: {{doctor.city}}</p>
+  </div>
+  <h2 *ngIf="docs.length === 0">No results found!</h2>
+</body>
+
+
+<router-outlet></router-outlet>

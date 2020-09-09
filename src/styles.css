@@ -1,0 +1,49 @@
+body{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	margin:0px;
+	min-height:700px;
+	background-color:#b8dff2 ;
+}
+nav{
+	text-align:right;
+	float:right;
+
+}
+nav{
+	text-align:right;
+	display: inline-block;
+	position: relative;
+}
+nav button{
+	font-size: 25px;
+	margin:5px;
+	color:black;
+	width:160px;
+	height:35px;
+	border:none;
+	border-bottom:double;
+	background-color:transparent;
+}
+nav div{
+	display: none;
+    position: absolute;
+    z-index: 1;
+	border-style:double;
+	background-color:white;
+	background-image:linear-gradient(rgba(0, 143, 198, 0.3),rgba(50, 200, 180, 0.8));
+	text-align:center;
+}
+nav div a{
+	color: black;
+	text-decoration: none;
+    display: block;
+}
+nav div a:hover{
+	background-color:rgba(0, 180, 198, 0.7)
+}
+nav:hover div{
+	display: block;
+}
+nav .profileBtn{
+	display: none;
+}

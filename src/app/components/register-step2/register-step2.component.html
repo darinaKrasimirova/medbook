@@ -1,0 +1,78 @@
+<form #register2form="ngForm">
+  <div>
+    <div>
+      <label for="workplace.name">Workplace Name</label>
+      <input type="text" id="workplace.name" name="workplace.name" [(ngModel)]="workplace.name" required>
+    </div>
+    <div>
+      <label for="workplace.address">Workplace Address</label>
+      <input type="text" id="workplace.address" name="workplace.address" [(ngModel)]="workplace.address" required>
+    </div>
+    <div>
+      <label class="days" for="Monday">Monday</label>
+      <input class="days" type="checkbox" id="Monday" name="Monday"  >
+      <label class="days" for="availability[0].from_h">From</label>
+      <input class="days" type="time" id="availability[0].from_h" name="availability[0].from_h" [(ngModel)]="availability[0].from_h">
+      <label class="days" for="availability[0].to_h">To</label>
+      <input class="days" type="time" id="availability[0].to_h" name="availability[0].to_h" [(ngModel)]="availability[0].to_h">
+    </div>
+
+    <div>
+      <label class="days" for="Tuesday">Tuesday</label>
+      <input class="days" type="checkbox" id="Tuesday" name="Tuesday"  >
+      <label class="days" for="availability[1].from_h">From</label>
+      <input class="days" type="time" id="availability[1].from_h" name="availability[1].from_h" [(ngModel)]="availability[1].from_h">
+      <label class="days" for="availability[1].to_h">To</label>
+      <input class="days" type="time" id="availability[1].to_h" name="availability[1].to_h" [(ngModel)]="availability[1].to_h">
+    </div>
+
+    <div>
+      <label class="days" for="Wednesday">Wednesday</label>
+      <input class="days" type="checkbox" id="Wednesday" name="Wednesday"  >
+      <label class="days" for="availability[2].from_h">From</label>
+      <input class="days" type="time" id="availability[2].from_h" name="availability[2].from_h" [(ngModel)]="availability[2].from_h">
+      <label class="days" for="availability[2].to_h">To</label>
+      <input class="days" type="time" id="availability[2].to_h" name="availability[2].to_h" [(ngModel)]="availability[2].to_h">
+    </div>
+
+    <div>
+      <label class="days" for="Thursday">Thursday</label>
+      <input class="days" type="checkbox" id="Thursday" name="Thursday"  >
+      <label class="days" for="availability[3].from_h">From</label>
+      <input class="days" type="time" id="availability[3].from_h" name="availability[3].from_h" [(ngModel)]="availability[3].from_h">
+      <label class="days" for="availability[3].to_h">To</label>
+      <input class="days" type="time" id="availability[3].to_h" name="availability[3].to_h" [(ngModel)]="availability[3].to_h">
+    </div>
+
+    <div>
+      <label class="days" for="Friday">Friday</label>
+      <input class="days" type="checkbox" id="Friday" name="Friday"  >
+      <label class="days" for="availability[4].from_h">From</label>
+      <input class="days" type="time" id="availability[4].from_h" name="availability[4].from_h" [(ngModel)]="availability[4].from_h">
+      <label class="days" for="availability[4].to_h">To</label>
+      <input class="days" type="time" id="availability[4].to_h" name="availability[4].to_h" [(ngModel)]="availability[4].to_h">
+    </div>
+
+    <div>
+      <label class="days" for="Saturday">Saturday</label>
+      <input class="days" type="checkbox" id="Saturday" name="Saturday" >
+      <label class="days" for="availability[5].from_h">From</label>
+      <input class="days" type="time" id="availability[5].from_h" name="availability[5].from_h" [(ngModel)]="availability[5].from_h">
+      <label class="days" for="availability[5].to_h">To</label>
+      <input class="days" type="time" id="availability[5].to_h" name="availability[5].to_h" [(ngModel)]="availability[5].to_h">
+    </div>
+
+    <div>
+      <label class="days" for="Sunday">Sunday</label>
+      <input class="days" type="checkbox" id="Sunday" name="Sunday"  >
+      <label class="days" for="availability[6].from_h">From</label>
+      <input class="days" type="time" id="availability[6].from_h" name="availability[6].from_h" [(ngModel)]="availability[6].from_h">
+      <label class="days" for="availability[6].to_h">To</label>
+      <input class="days" type="time" id="availability[6].to_h" name="availability[6].to_h" [(ngModel)]="availability[6].to_h">
+    </div>
+  </div>
+  <button type="button" (click)="Submit(register2form)" [disabled]="(!register2form.form.valid || disabled)&&!(cookieService.check('edit'))" >Register</button>
+
+</form>
+
+

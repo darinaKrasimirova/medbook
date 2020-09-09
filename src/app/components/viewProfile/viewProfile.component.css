@@ -1,0 +1,76 @@
+div{
+	display:block;
+	margin:20px;
+	width:50%;
+	border-style: outset;
+	border-width: 2px ;
+	float:left;
+}
+p{
+	margin: 15px;
+}
+.book{
+	float:right;
+	width:35%;
+	margin-right:50px;
+}
+h1{
+	display :inline-block;
+	font-size: 30px;
+	font-style:italic;
+	font-weight:normal;
+	margin: 15px;
+}
+table{
+	width:50%;
+	border-style: ridge; 
+	border-color:blue;
+	border-width:2px;
+	margin:10px;
+	background-color:white;
+	text-align:center;
+	border-collapse: collapse;
+	border-radius: 5px;
+}
+th,td{
+	border:1px solid blue;
+}
+th{
+	background-color:rgba(0, 143, 198, 0.8);
+}
+.docImg{
+	max-width: 150px;
+	min-width: 100px;
+	max-height: 150px;
+	min-height: 100px;
+	margin:15px;
+	display: inline-block;
+}
+select,input, button{
+	display: inline-block;
+	font-size: 20px;
+	width: 40%;
+	margin: 15px;
+	border-radius: 7px;
+}
+label{
+	text-align: right;
+	display: inline-block;
+	font-size: 20px;
+	width: 40%;
+	margin: 15px;
+}
+button{
+	float: right;
+}
+form{
+	display: block;
+}
+.appointment{
+	border-style: none;
+	margin:10px;
+	display: block;
+	float: inline-end;
+	width: fit-content;
+	
+}

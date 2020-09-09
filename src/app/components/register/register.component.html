@@ -1,0 +1,13 @@
+<body> 
+  <header>
+    <a href="/home"><img src="assets/logo.png"></a>
+  </header> 
+  <div *ngIf="!edit">
+    <img class="img" src="assets/doctorCartoon.jpg">
+    <p>Join medbook family. Register <a href="register/step1">here</a> so you can easily manage your work!</p>
+    <p><a href="home">Log in</a> if you already have account</p>
+  </div>
+  <app-register-step1 *ngIf="routerr.url==='/register/step1'" (notify)="OnNotify($event)"></app-register-step1>
+  <app-register-step2 *ngIf="routerr.url==='/register/step2'" [doctor]="doctor" ></app-register-step2>
+</body>
+

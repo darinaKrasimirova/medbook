@@ -1,0 +1,42 @@
+<body *ngIf="showContent">
+  <header>
+    <a href="/home"><img src="assets/logo.png"></a>
+    <nav>
+      <button>My profile</button>
+      <div>
+        <a href="register/step1" (click) = "Edit()">Edit</a>
+        <a href="home" (click) = "LogOut()">Log out</a>
+        <a href="delete/profile/{{doctor.username}}" (click) = "DeleteProfile()">Delete profile</a>
+        </div>
+    </nav>
+  </header>
+  <div>
+    <h1>Welcome Dr {{doctor.name}}</h1>
+    <h2>Upcoming Booked Hours</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Hospital</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Patient</th>
+          <th>Contact info</th>
+          <th>Done</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let checkup of checkups">
+        <tr>
+          <td>{{checkup.workplace.name}}</td>
+          <td>{{checkup.date}}</td>
+          <td>{{checkup.time}}</td>
+          <td>{{checkup.patient.name}}</td>
+          <td>{{checkup.patient.contact}}</td>
+          <td><a href="/myProfile" (click)="this.http.DeleteCheckup(checkup.id)" >V</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+
+<router-outlet></router-outlet>

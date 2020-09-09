@@ -1,0 +1,26 @@
+div{
+    border-style: outset;
+    border-width: 2px;
+    width: 30%;
+    display: inline-block;
+    margin:15px;
+
+}
+h1{
+    text-align: center;
+}
+h2{
+    display: inline-block;
+}
+.img{
+    min-width: 100px;
+    max-width: 150px;
+    min-height: 100px;
+    max-height: 150px;
+    margin: 10px;
+    display: inline-block;
+}
+p{
+    margin:10px;
+
+}

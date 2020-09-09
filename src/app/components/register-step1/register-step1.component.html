@@ -1,0 +1,58 @@
+<form #register1form="ngForm">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" [(ngModel)]="doctor.name" required>
+  </div>
+  <div>
+    <label for="education">Education</label>
+    <textarea id="education" name="education" rows="5" cols="40" [(ngModel)]="doctor.education" required></textarea>
+  </div>
+  <div>
+    <label for="practicing_since">Practice since</label>
+    <input id="practicing_since" name="practicing_since" type="number" [(ngModel)]="doctor.practicing_since" required>
+  </div>
+  <div>
+    <label for="practice">Practice</label>
+    <textarea id="practice" name="practice" rows="5" cols="40" [(ngModel)]="doctor.practice" required></textarea>
+  </div>
+  <div>
+    <label for="medical_field">Medical field</label>
+    <select id="medical_field" name="medical_field" [(ngModel)]="doctor.medical_field" >
+      <option *ngFor="let field of medicalFields.keys()" [selected]="field===doctor.medical_field">{{medicalFields[field]}}</option>
+    </select>
+  </div>
+  <div>
+    <label for="services">Services</label>
+    <textarea id="services" name="services" rows="5" cols="40" [(ngModel)]="doctor.services"></textarea>
+  </div>
+  <div>
+    <label for="city">City</label>
+    <select id="city" name="city" [(ngModel)]="doctor.city">
+      <option *ngFor="let city of cities.keys()" [selected]="city===doctor.city">{{cities[city]}}</option>
+    </select>
+  </div>
+  <div >
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text" [(ngModel)]="doctor.username" [disabled]="cookieService.check('edit')" required>
+  </div>
+  <div>
+    <label id="validUsername"></label>
+    <button type="button" (click)="checkUsername()">Check username</button>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="text" [(ngModel)]="doctor.password" required>
+  </div>
+  <div>
+    <label for="img">Image</label>
+    <!--<input type="file" id="img" name="img" accept="image/*">-->
+    <input type="file" id="img" name="img" accept="image/*" (change)="fileChangeEvent($event)">
+    <img class="img" [src]="doctor.image" />
+    <!--<input type="file" id="img" name="img" accept="image/*" alife-file-to-base64 multiple (onFileChanged)="onFileChanges($event)" [(fileModel)]="files" [(ngModel)]="rawFiles" />-->
+  </div>
+  <div>
+    <label></label>
+    <button type="button" (click)="doctorInfo(register1form)" [disabled]="(!register1form.form.valid || !usernameValid)&&!(cookieService.check('edit'))" >Next</button >
+  </div>
+</form>
+

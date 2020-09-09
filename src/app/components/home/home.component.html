@@ -1,0 +1,39 @@
+<body>
+  <header>
+    <a href="/home"><img src="assets/logo.png"></a>
+  </header>
+  <section>
+    <h1>Looking for a doctor?</h1>
+    <form #searchByFieldsForm='ngForm'>
+      <label for="field">Medical field</label>
+      <select id="field" name="field" [(ngModel)]="field">
+        <option *ngFor="let field of medicalFields.keys()" [value]="field">{{medicalFields[field]}}</option>
+      </select>
+      <label for="location">Location</label>
+      <select id="location" name="location" [(ngModel)]="city">
+        <option *ngFor="let city of cities.keys()" [value]="city">{{cities[city]}}</option>
+      </select>
+      <button type="submit" (click)="SearchByFields() " [disabled]="clicked">Search</button>
+    </form>
+      <p>or</p>
+    <form #searchByNameForm='ngForm'>
+      <label for="doctor">Search by name</label>
+      <input id="doctor" name="doctor" type="text" [(ngModel)]="name">
+      <button type="submit" (click)="SearchByName()" [disabled]="clicked">Search</button>
+    </form>
+  </section>
+  <section>
+    <h1>You are a doctor!</h1>
+    <form>
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" [(ngModel)]="username">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" [(ngModel)]="password">
+      <button type="submit" (click)="LogIn()">Log in</button>
+      <label id="logInNote"></label>
+      <p>Don't have an account?</p>
+      <a href="register">Register here</a>
+    </form>
+  </section>
+</body>
+<router-outlet></router-outlet>

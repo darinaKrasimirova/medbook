@@ -1,0 +1,45 @@
+form{
+	display:table;
+	float:right;
+	border-style:outset;
+	margin:50px;
+	width:50%;
+}
+div{
+	display:table-row;
+    font-size:25px;
+}
+label{
+	display: table-cell;
+	text-align:right;
+	vertical-align:middle;
+	width:50%;
+}
+select,input{
+	display: table-cell;
+    height: 30px;
+    margin: 10px;
+    border-radius: 7px;
+    width: 295px;
+    font-size: 20px;
+}
+textarea{
+	display:table-cell;
+	margin:10px;
+	border-radius:7px;
+}
+button{
+    display: table-cell;
+    height: 30px;
+    margin: 10px;
+    border-radius: 7px;
+    width: 295px;
+    font-size: 20px;
+    float:right;
+}
+textarea.ng-invalid.ng-touched, input.ng-invalid.ng-touched{
+	border-left: 3px solid red;
+}
+textarea.ng-valid.ng-touched, input.ng-valid.ng-touched{
+	border-left: 3px solid green;
+}

@@ -1,0 +1,50 @@
+form{
+	float:right;
+	border-style: outset;
+	margin:50px;
+	width:50%;
+}
+div{
+	display:block;
+	font-size:25px;
+	border: none;
+}
+label{
+	display:inline-block;
+	text-align:right;
+	vertical-align:middle;
+	width:50%;
+	margin:10px;
+}
+input{
+	display:inline-block;
+	height:30px;
+	border-radius: 7px;
+	width:40%;
+	margin:10px;
+	font-size: 20px;
+}
+input[type=checkbox]{
+	margin:0px;
+	width:30px;
+	margin:30px 5px;
+}
+.days{
+	display: inline;
+	width:20%;
+	margin:10px;
+}
+button{
+	height: 30px;
+	width:40%;
+	float: right;
+	border-radius: 7px;
+	margin: 10px;
+	font-size: 20px;
+}
+input.ng-invalid.ng-touched{
+	border-left: 3px solid red;
+}
+input.ng-valid.ng-touched{
+	border-left: 3px solid green;
+}

@@ -1,0 +1,55 @@
+<body>
+  <header>
+    <a href="/home"><img src="assets/logo.png"></a>
+  </header>
+  <form #registerform="ngForm" *ngIf="register">
+    <div>
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" [(ngModel)]="patient.name" required>
+    </div>
+    <div>
+      <label for="contact">Tel</label>
+      <input id="contact" name="contact" type="text" [(ngModel)]="patient.contact" required>
+    </div>
+    <div >
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" [(ngModel)]="patient.username" required>
+    </div>
+    <div>
+      <label id="validUsername"></label>
+      <button type="button" (click)="checkUsernamePatient()">Check username</button>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="text" [(ngModel)]="patient.password" required>
+    </div>
+    <div>
+      <label></label>
+      <button type="button" (click)="registerPatient()" [disabled]="!registerform.form.valid || !validUsername" >Register</button >
+    </div>
+  </form>
+  <form *ngIf="!register && !confirmInfo" #loginform="ngForm">
+    <div >
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" [(ngModel)]="patient.username" required>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="text" [(ngModel)]="patient.password" required>
+    </div>
+    <div>
+      <label></label>
+      <button type="button" (click)="logInPatient()" [disabled]="!loginform.form.valid" >Log In</button >
+    </div>
+    <p>Don't have an account?</p>
+      <a href="/patientRegister">Register here</a>
+  </form>
+  <div *ngIf="confirmInfo">
+    <h1>Confirm appointment</h1>
+    <p>Name: {{patient.name}}</p>
+    <p>ContactInfo: {{patient.contact}}</p>
+    <p>Appointment with doctor {{docName}} at {{workplace}}</p>
+    <p>Appointment time: {{date}} at {{time}}</p>
+    <button (click)="Book()">Confirm</button>
+  </div>
+</body>
